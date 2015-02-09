@@ -1,0 +1,368 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/////////////////////////////////////// Browse happy
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/////////////////////////////////////// Variables
+// primary color
+$green: #03996A;
+$blue: #515E72;
+$lightblue: #889FBF;
+$darkblue: #333E4F;
+$lightorange: #EE7A23;
+$orange: #DA5F27;
+$red: #D83D5E;
+$lightred: #F06679;
+$lighterred: #F48CA3;
+$white: #fff;
+
+
+/////////////////////////////////////// Mixins
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+}
+
+@mixin animation-name($name) {
+    -webkit-animation-name: $name;
+    -moz-animation-name: $name;
+    -o-animation-name: $name;
+    animation-name: $name;
+}
+
+@mixin animation-delay($delay) {
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -o-animation-delay: $delay;
+    animation-delay: $delay;
+}
+
+@mixin animation-duration($duration) {
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -o-animation-duration: $duration;
+    animation-duration: $duration;
+}
+
+@mixin animation-timing-function($timing-function) {
+    -webkit-animation-timing-function: $timing-function;
+    -moz-animation-timing-function: $timing-function;
+    -o-animation-timing-function: $timing-function;
+    animation-timing-function: $timing-function;
+}
+
+@mixin animation-iteration-count($iteration-count) {
+    -webkit-animation-iteration-count: $iteration-count;
+    -moz-animation-iteration-count: $iteration-count;
+    -o-animation-iteration-count: $iteration-count;
+    animation-iteration-count: $iteration-count;
+}
+
+@mixin animation-fill-mode($fill-mode) {
+    -webkit-animation-fill-mode: $fill-mode;
+    -moz-animation-fill-mode: $fill-mode;
+    -o-animation-fill-mode: $fill-mode;
+    animation-fill-mode: $fill-mode;
+}
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform($transformation) {
+    -webkit-transform: $transformation;
+    -moz-transform: $transformation;
+    -o-transform: $transformation;
+    transform: $transformation;
+}
+
+@mixin buttontext($color) {
+    font-family: "Lato", sans-serif;
+    font-size: 1.1em;
+    font-style: lighter;
+    font-weight: 300;
+    color: $color;
+}
+
+/////////////////////////////////////// Global
+body {
+    background: #fafafa;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+section {
+    // position: absolute;
+    // top: 0%;
+    width: 100%;
+    height: 100%;
+    // overflow: hidden;   
+}
+
+.reverse {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 130px;
+    padding: 25px 20px 20px 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    @include buttontext($white);
+    @include transition(all 0.3s ease-in-out);
+    cursor: pointer;
+
+}
+
+.move-down {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 72%;
+    left: 0;
+    right: 0;
+    width: 150px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    @include buttontext($white);
+    @include transition(all 0.3s ease-in-out);
+    cursor: pointer;
+}
+
+.down-arrow {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 60px;
+    left: 0;
+    right: 0;
+}
+
+///////////////////////////////// Option 1
+.option-1 {
+    position: relative;
+    background-color: $darkblue;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $white;
+    }
+    .down-arrow polyline {
+        stroke: $white;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $white;
+    }
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-1-color.png");
+    }
+}
+
+.option-1-reverse {
+    position: relative;
+    background-color: $white;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $darkblue;
+    }
+    .down-arrow polyline {
+        stroke: $darkblue;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $darkblue;
+    }
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-1-white.png");
+    }
+}
+
+////////////////////////////////// Option 2
+.option-2 {
+    position: relative;
+    background-color: $white;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $green;
+    }
+    .down-arrow polyline {
+        stroke: $green;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $green;
+    }
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-2-white.png");
+    }
+}
+
+.option-2-reverse {
+    position: relative;
+    background-color: $green;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $white;
+    }
+    .down-arrow polyline {
+        stroke: $white;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $white;
+    }
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-2-color.png");
+    }
+}
+
+////////////////////////////////// Option 3
+.option-3 {
+    position: relative;
+    background-color: $blue;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $white;
+    }
+    .down-arrow polyline {
+        stroke: $white;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $white;
+    }
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-3-color.png");
+    }
+}
+
+.option-3-reverse {
+    position: relative;
+    background-color: $white;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $blue;
+    }
+    .down-arrow polyline {
+        stroke: $blue;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $blue;
+    }
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-3-white.png");
+    }
+}
+
+////////////////////////////////// Option 4
+.option-4 {
+    position: relative;
+    background-color: $white;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $orange;
+    }
+    .down-arrow polyline {
+        stroke: $orange;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $orange;
+    }
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-4-white.png");
+    }
+}
+
+.option-4-reverse {
+    position: relative;
+    background-color: $orange;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $white;
+    }
+    .down-arrow polyline {
+        stroke: $white;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $white;
+    }
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-4-color.png");
+    }
+}

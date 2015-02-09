@@ -4,19 +4,27 @@ $('document').ready(function(){
 
 // switch between logo options
 $('.option-1 .reverse').click(function(){
-   $('.option-1').toggleClass('option-1-reverse')
+   $('.option-1').toggleClass('option-1-reverse');
 })
 
 $('.option-2 .reverse').click(function(){
-   $('.option-2').toggleClass('option-2-reverse')
+   $('.option-2').toggleClass('option-2-reverse');
 })
 
 $('.option-3 .reverse').click(function(){
-   $('.option-3').toggleClass('option-3-reverse')
+   $('.option-3').toggleClass('option-3-reverse');
 })
 
 $('.option-4 .reverse').click(function(){
-   $('.option-4').toggleClass('option-4-reverse')
+   $('.option-4').toggleClass('option-4-reverse');
+})
+
+$('.option-5 .reverse').click(function(){
+   $('.option-5').toggleClass('option-5-reverse');
+})
+
+$('.option-6 .reverse').click(function(){
+   $('.option-6').toggleClass('option-6-reverse');
 })
 
 // Move down button triggers moveDown method

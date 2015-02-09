@@ -140,6 +140,21 @@ $white: #fff;
     color: $color;
 }
 
+@mixin configuresection($background, $buttons) {
+    position: relative;
+    background-color: $background;
+    padding-top: 80px;
+    .reverse, .move-down {
+        color: $buttons;
+    }
+    .down-arrow polyline {
+        stroke: $buttons;
+    }
+    .reverse-arrow polyline, .reverse-arrow path {
+        stroke: $buttons;
+    }
+}
+
 /////////////////////////////////////// Global
 body {
     background: #fafafa;
@@ -147,11 +162,8 @@ body {
 }
 
 section {
-    // position: absolute;
-    // top: 0%;
     width: 100%;
-    height: 100%;
-    // overflow: hidden;   
+    height: 100%;  
 }
 
 .reverse {
@@ -197,18 +209,7 @@ section {
 
 ///////////////////////////////// Option 1
 .option-1 {
-    position: relative;
-    background-color: $darkblue;
-    padding-top: 80px;
-    .reverse, .move-down {
-        color: $white;
-    }
-    .down-arrow polyline {
-        stroke: $white;
-    }
-    .reverse-arrow polyline, .reverse-arrow path {
-        stroke: $white;
-    }
+    @include configuresection($darkblue, $white);
     .inner-wrapper {
         margin: 0 auto;
         width: 500px;
@@ -218,18 +219,7 @@ section {
 }
 
 .option-1-reverse {
-    position: relative;
-    background-color: $white;
-    padding-top: 80px;
-    .reverse, .move-down {
-        color: $darkblue;
-    }
-    .down-arrow polyline {
-        stroke: $darkblue;
-    }
-    .reverse-arrow polyline, .reverse-arrow path {
-        stroke: $darkblue;
-    }
+    @include configuresection($white, $darkblue);
     .inner-wrapper {
         margin: 0 auto;
         width: 500px;
@@ -240,18 +230,7 @@ section {
 
 ////////////////////////////////// Option 2
 .option-2 {
-    position: relative;
-    background-color: $white;
-    padding-top: 80px;
-    .reverse, .move-down {
-        color: $green;
-    }
-    .down-arrow polyline {
-        stroke: $green;
-    }
-    .reverse-arrow polyline, .reverse-arrow path {
-        stroke: $green;
-    }
+    @include configuresection($white, $green);
     .inner-wrapper {
         margin: 0 auto;
         width: 500px;
@@ -261,18 +240,7 @@ section {
 }
 
 .option-2-reverse {
-    position: relative;
-    background-color: $green;
-    padding-top: 80px;
-    .reverse, .move-down {
-        color: $white;
-    }
-    .down-arrow polyline {
-        stroke: $white;
-    }
-    .reverse-arrow polyline, .reverse-arrow path {
-        stroke: $white;
-    }
+    @include configuresection($green, $white);
     .inner-wrapper {
         margin: 0 auto;
         width: 500px;
@@ -283,18 +251,7 @@ section {
 
 ////////////////////////////////// Option 3
 .option-3 {
-    position: relative;
-    background-color: $blue;
-    padding-top: 80px;
-    .reverse, .move-down {
-        color: $white;
-    }
-    .down-arrow polyline {
-        stroke: $white;
-    }
-    .reverse-arrow polyline, .reverse-arrow path {
-        stroke: $white;
-    }
+    @include configuresection($blue, $white);
     .inner-wrapper {
         margin: 0 auto;
         width: 500px;
@@ -304,18 +261,7 @@ section {
 }
 
 .option-3-reverse {
-    position: relative;
-    background-color: $white;
-    padding-top: 80px;
-    .reverse, .move-down {
-        color: $blue;
-    }
-    .down-arrow polyline {
-        stroke: $blue;
-    }
-    .reverse-arrow polyline, .reverse-arrow path {
-        stroke: $blue;
-    }
+    @include configuresection($white, $blue);
     .inner-wrapper {
         margin: 0 auto;
         width: 500px;
@@ -326,18 +272,7 @@ section {
 
 ////////////////////////////////// Option 4
 .option-4 {
-    position: relative;
-    background-color: $white;
-    padding-top: 80px;
-    .reverse, .move-down {
-        color: $orange;
-    }
-    .down-arrow polyline {
-        stroke: $orange;
-    }
-    .reverse-arrow polyline, .reverse-arrow path {
-        stroke: $orange;
-    }
+    @include configuresection($white, $orange);
     .inner-wrapper {
         margin: 0 auto;
         width: 500px;
@@ -347,22 +282,53 @@ section {
 }
 
 .option-4-reverse {
-    position: relative;
-    background-color: $orange;
-    padding-top: 80px;
-    .reverse, .move-down {
-        color: $white;
-    }
-    .down-arrow polyline {
-        stroke: $white;
-    }
-    .reverse-arrow polyline, .reverse-arrow path {
-        stroke: $white;
-    }
+    @include configuresection($orange, $white);
     .inner-wrapper {
         margin: 0 auto;
         width: 500px;
         height: 500px;
         background: url("../images/logo-option-4-color.png");
+    }
+}
+
+////////////////////////////////// Option 5
+.option-5 {
+    @include configuresection($darkblue, $white);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-5-color.png");
+    }
+}
+
+.option-5-reverse {
+    @include configuresection($white, $darkblue);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-5-white.png");
+    }
+}
+
+////////////////////////////////// Option 6
+.option-6 {
+    @include configuresection($darkblue, $white);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-6-color.png");
+    }
+}
+
+.option-6-reverse {
+    @include configuresection($white, $darkblue);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-6-white.png");
     }
 }

@@ -69,6 +69,38 @@ $white: #fff;
 
 
 /////////////////////////////////////// Mixins
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
 @mixin animation($animation) {
     -webkit-animation: $animation;
     -moz-animation: $animation;
@@ -291,27 +323,6 @@ section {
     }
 }
 
-////////////////////////////////// Option 5
-.option-5 {
-    @include configuresection($darkblue, $white);
-    .inner-wrapper {
-        margin: 0 auto;
-        width: 500px;
-        height: 500px;
-        background: url("../images/logo-option-5-color.png");
-    }
-}
-
-.option-5-reverse {
-    @include configuresection($white, $darkblue);
-    .inner-wrapper {
-        margin: 0 auto;
-        width: 500px;
-        height: 500px;
-        background: url("../images/logo-option-5-white.png");
-    }
-}
-
 ////////////////////////////////// Option 6
 .option-6 {
     @include configuresection($darkblue, $white);
@@ -330,5 +341,58 @@ section {
         width: 500px;
         height: 500px;
         background: url("../images/logo-option-6-white.png");
+    }
+}
+
+////////////////////////////////// Option 7
+.option-7 {
+    @include configuresection($darkblue, $white);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-7-color.png");
+    }
+}
+
+.option-7-reverse {
+    @include configuresection($white, $darkblue);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-7-white.png");
+    }
+}
+
+////////////////////////////////// Option 8
+.option-8 {
+    @include configuresection($white, $darkblue);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-8-white.png");
+    }
+}
+
+.option-8-reverse {
+    @include configuresection($darkblue, $white);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-8-color.png");
+    }
+}
+
+////////////////////////////////// Option 9
+.option-9 {
+    @include configuresection($darkblue, $white);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 700px;
+        height: 500px;
+        background: url("../images/logo-and-icons.png");
     }
 }

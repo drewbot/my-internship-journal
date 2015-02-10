@@ -19,12 +19,18 @@ $('.option-4 .reverse').click(function(){
    $('.option-4').toggleClass('option-4-reverse');
 })
 
-$('.option-5 .reverse').click(function(){
-   $('.option-5').toggleClass('option-5-reverse');
-})
+// removed option 5
 
 $('.option-6 .reverse').click(function(){
    $('.option-6').toggleClass('option-6-reverse');
+})
+
+$('.option-7 .reverse').click(function(){
+   $('.option-7').toggleClass('option-7-reverse');
+})
+
+$('.option-8 .reverse').click(function(){
+   $('.option-8').toggleClass('option-8-reverse');
 })
 
 // Move down button triggers moveDown method

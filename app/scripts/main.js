@@ -33,6 +33,10 @@ $('.option-8 .reverse').click(function(){
    $('.option-8').toggleClass('option-8-reverse');
 })
 
+$('.option-10 .reverse').click(function(){
+   $('.option-10').toggleClass('option-10-reverse');
+})
+
 // Move down button triggers moveDown method
 $('.move-down').click(function(){
    $(".main").moveDown();

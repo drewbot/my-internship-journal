@@ -386,6 +386,27 @@ section {
     }
 }
 
+////////////////////////////////// Option 10
+.option-10 {
+    @include configuresection($darkblue, $white);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-10-color.png");
+    }
+}
+
+.option-10-reverse {
+    @include configuresection($white, $darkblue);
+    .inner-wrapper {
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        background: url("../images/logo-option-10-white.png");
+    }
+}
+
 ////////////////////////////////// Option 9
 .option-9 {
     @include configuresection($darkblue, $white);
